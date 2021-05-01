@@ -6,14 +6,13 @@ class SuccessReg extends StatefulWidget {
   _SuccessRegState createState() => _SuccessRegState();
 }
 
-
 class _SuccessRegState extends State<SuccessReg> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Successful Registration"),
+          title: Text("Successful"),
           backgroundColor: Colors.cyan[500],
         ),
         body: SingleChildScrollView(
@@ -23,16 +22,18 @@ class _SuccessRegState extends State<SuccessReg> {
             child: Column(
               children: [
                 Container(
-                  child: Text(
-                    "You have successfully registered!",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.w500,
+                  child: Center(
+                    child: Text(
+                      "You have successfully added!",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   width: MediaQuery.of(context).size.width,
-                ), 
+                ),
               ],
             ),
           ),

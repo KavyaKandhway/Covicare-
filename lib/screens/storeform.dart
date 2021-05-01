@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/models/store.dart';
 
+import 'successReg.dart';
+
 class StoreForm extends StatefulWidget {
   @override
   _StoreFormState createState() => _StoreFormState();
@@ -468,27 +470,29 @@ class _StoreFormState extends State<StoreForm> {
                 ),
                 GestureDetector(
                   onTap: () async {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => SuccessReg()),
+                    );
                     print("Entered");
                     Store store = Store(
-                      name: name.text,
-                      contact: contact.text,
-                      country: countryValue,
-                      state: stateValue,
-                      city: cityValue,
-                      pincode: pincode.text,
-                      address1: address1.text,
-                      address2: address2.text,
-                      landmark: landmark.text,
-                      grocery: grocery,
-                      medical: medical,
-                      dairy: dairy,
-                      bakery:bakery,
-                      personalcare:personalcare
-                    );
+                        name: name.text,
+                        contact: contact.text,
+                        country: countryValue,
+                        state: stateValue,
+                        city: cityValue,
+                        pincode: pincode.text,
+                        address1: address1.text,
+                        address2: address2.text,
+                        landmark: landmark.text,
+                        grocery: grocery,
+                        medical: medical,
+                        dairy: dairy,
+                        bakery: bakery,
+                        personalcare: personalcare);
                     user = _auth.currentUser;
                     print("database=================");
-                    await DatabaseService(uid: user.uid)
-                        .updateStoreData(store);
+                    await DatabaseService(uid: user.uid).updateStoreData(store);
                   },
                   child: Container(
                     height: 40,

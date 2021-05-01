@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/models/supply.dart';
 
+import 'successReg.dart';
+
 class SupplyForm extends StatefulWidget {
   @override
   _SupplyFormState createState() => _SupplyFormState();
@@ -625,6 +627,10 @@ class _SupplyFormState extends State<SupplyForm> {
                 ),
                 GestureDetector(
                   onTap: () async {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => SuccessReg()),
+                    );
                     print("Entered");
                     Supply supply = Supply(
                       name: name.text,

@@ -5,6 +5,8 @@ import 'package:covicare/models/blog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:covicare/helpers/database.dart';
 
+import 'successReg.dart';
+
 class BlogForm extends StatefulWidget {
   @override
   _BlogFormState createState() => _BlogFormState();
@@ -169,7 +171,7 @@ class _BlogFormState extends State<BlogForm> {
                     fillColor: Colors.grey[300],
                     filled: true,
                     labelText:
-                    'Add maximum five keywords related to your Article',
+                        'Add maximum five keywords related to your Article',
                     labelStyle: TextStyle(
                       fontSize: 15,
                       color: Colors.cyan,
@@ -196,29 +198,34 @@ class _BlogFormState extends State<BlogForm> {
                 ),
                 GestureDetector(
                   onTap: () async {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => SuccessReg()),
+                    );
                     print("Entered");
                     Blog blog = Blog(
                       name: name.text,
-                      designation:designation.text,
+                      designation: designation.text,
                       title: title.text,
-                      content:content.text,
-                      anonymous:anonymous,
-                      tags:tags.text,
+                      content: content.text,
+                      anonymous: anonymous,
+                      tags: tags.text,
                     );
                     user = _auth.currentUser;
                     print("Blog-database=================");
-                    await DatabaseService(uid: user.uid)
-                        .updateBlogData(blog);
+                    await DatabaseService(uid: user.uid).updateBlogData(blog);
                   },
                   child: new Container(
                     padding: const EdgeInsets.only(left: 150.0, top: 40.0),
                     child: new ElevatedButton(
                       child: const Text('Submit'),
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.cyan),
-                          padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                          textStyle:
-                          MaterialStateProperty.all(TextStyle(fontSize: 15))),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.cyan),
+                          padding:
+                              MaterialStateProperty.all(EdgeInsets.all(20)),
+                          textStyle: MaterialStateProperty.all(
+                              TextStyle(fontSize: 15))),
                     ),
                   ),
                 ),
