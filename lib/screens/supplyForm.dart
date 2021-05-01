@@ -31,7 +31,10 @@ class _SupplyFormState extends State<SupplyForm> {
   TextEditingController favQuantity = TextEditingController();
   TextEditingController favAmt = TextEditingController();
   String countryValue = '', stateValue = '', cityValue = '';
-  bool oxygen = false, favipiravir = false, bed = false, remdesivir = false;
+  bool oxygen = false,
+      favipiravir = false,
+      bed = false,
+      remdesivir = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(

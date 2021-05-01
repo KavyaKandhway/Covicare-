@@ -33,9 +33,10 @@ class _StoreFormState extends State<StoreForm> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.deepPurple[100],
         appBar: AppBar(
           title: Text("Add Local Store"),
-          backgroundColor: Colors.cyan[500],
+          backgroundColor: Colors.deepPurple,
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -57,19 +58,25 @@ class _StoreFormState extends State<StoreForm> {
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  controller: name,
-                  maxLength: 40,
-                  decoration: InputDecoration(
-                    labelText: "name",
-                    counterText: "",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TextField(
+                    controller: name,
+                    maxLength: 40,
+                    decoration: InputDecoration(
+                      labelText: "Name",
+                      counterText: "",
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                      ),
                     ),
                   ),
                 ),
@@ -90,20 +97,26 @@ class _StoreFormState extends State<StoreForm> {
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  controller: contact,
-                  keyboardType: TextInputType.number,
-                  maxLength: 10,
-                  decoration: InputDecoration(
-                    labelText: "contact Number",
-                    counterText: "",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
+                Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                    child: TextField(
+                    controller: contact,
+                    keyboardType: TextInputType.number,
+                    maxLength: 10,
+                    decoration: InputDecoration(
+                      labelText: "contact Number",
+                      counterText: "",
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                      ),
                     ),
                   ),
                 ),
@@ -130,8 +143,8 @@ class _StoreFormState extends State<StoreForm> {
                   flagState: CountryFlag.SHOW_IN_DROP_DOWN_ONLY,
                   dropdownDecoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Colors.cyan[50],
-                      border: Border.all(color: Colors.cyan, width: 2)),
+                      color: Colors.deepPurple[50],
+                      border: Border.all(color: Colors.deepPurple, width: 2)),
                   disabledDropdownDecoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       color: Colors.grey.shade300,
@@ -171,7 +184,7 @@ class _StoreFormState extends State<StoreForm> {
                 ),
                 Container(
                   child: Text(
-                    "Enter pincode",
+                    "Enter Pin Code",
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontSize: 18.0,
@@ -183,20 +196,26 @@ class _StoreFormState extends State<StoreForm> {
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  keyboardType: TextInputType.number,
-                  maxLength: 6,
-                  controller: pincode,
-                  decoration: InputDecoration(
-                    labelText: "Pincode",
-                    counterText: "",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
+                Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    maxLength: 6,
+                    controller: pincode,
+                    decoration: InputDecoration(
+                      labelText: "Pincode",
+                      counterText: "",
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                      ),
                     ),
                   ),
                 ),
@@ -217,38 +236,50 @@ class _StoreFormState extends State<StoreForm> {
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  controller: address1,
-                  maxLength: 40,
-                  decoration: InputDecoration(
-                    labelText: "Address Line 1",
-                    counterText: "",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TextField(
+                    controller: address1,
+                    maxLength: 40,
+                    decoration: InputDecoration(
+                      labelText: "Address Line 1",
+                      counterText: "",
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  controller: address2,
-                  maxLength: 40,
-                  decoration: InputDecoration(
-                    labelText: "Address Line 2",
-                    counterText: "",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child:TextField(
+                    controller: address2,
+                    maxLength: 40,
+                    decoration: InputDecoration(
+                      labelText: "Address Line 2",
+                      counterText: "",
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                      ),
                     ),
                   ),
                 ),
@@ -269,19 +300,25 @@ class _StoreFormState extends State<StoreForm> {
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  controller: landmark,
-                  maxLength: 40,
-                  decoration: InputDecoration(
-                    labelText: "Landmark",
-                    counterText: "",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child:TextField(
+                    controller: landmark,
+                    maxLength: 40,
+                    decoration: InputDecoration(
+                      labelText: "Landmark",
+                      counterText: "",
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                      ),
                     ),
                   ),
                 ),
@@ -304,9 +341,10 @@ class _StoreFormState extends State<StoreForm> {
                 ),
                 Container(
                   decoration: BoxDecoration(
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                       width: 2,
                     ),
                   ),
@@ -495,14 +533,18 @@ class _StoreFormState extends State<StoreForm> {
                     await DatabaseService(uid: user.uid).updateStoreData(store);
                   },
                   child: Container(
-                    height: 40,
-                    width: MediaQuery.of(context).size.width - 30,
+                    height: 60,
+                    width: MediaQuery.of(context).size.width - 180,
                     decoration: BoxDecoration(
-                      color: Colors.cyan[100],
-                      border: Border.all(width: 2, color: Colors.black),
+                      color: Colors.deepPurple[500],
+                      border: Border.all(width: 2, color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Center(child: Text("Submit")),
+                    child: Center(child:
+                    Text(
+                      "Submit",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    )),
                   ),
                 ),
               ],

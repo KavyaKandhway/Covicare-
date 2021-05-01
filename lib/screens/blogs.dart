@@ -61,7 +61,7 @@ class _BlogState extends State<Blog> {
                                       padding: const EdgeInsets.all(20.0),
                                       child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                        MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Icon(
                                             Icons.favorite,
