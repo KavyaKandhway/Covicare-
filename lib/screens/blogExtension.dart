@@ -56,7 +56,8 @@ class _BlogExtendState extends State<BlogExtend> {
                             ),
                             Center(
                               child: Image(
-                                image: AssetImage('images/sample.jpg'),
+                                image: AssetImage(
+                                    'images/' + document['imagelink']),
                               ),
                             ),
                             Padding(

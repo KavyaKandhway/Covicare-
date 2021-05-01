@@ -13,29 +13,21 @@ class _SuccessRegState extends State<SuccessReg> {
       child: Scaffold(
         appBar: AppBar(
           title: Text("Successful"),
-          backgroundColor: Colors.cyan[500],
+          backgroundColor: Colors.deepPurple,
         ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Container(
-                  child: Center(
-                    child: Text(
-                      "You have successfully added!",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  width: MediaQuery.of(context).size.width,
+        body: Center(
+          child: Container(
+            child: Center(
+              child: Text(
+                "You have successfully added!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.w500,
                 ),
-              ],
+              ),
             ),
+            width: MediaQuery.of(context).size.width,
           ),
         ),
       ),

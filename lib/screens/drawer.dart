@@ -1,3 +1,5 @@
+import 'package:covicare/helpers/google_auth.dart';
+import 'package:covicare/main.dart';
 import 'package:flutter/material.dart';
 
 class LeftDrawer extends StatefulWidget {
@@ -10,9 +12,10 @@ class _LeftDrawerState extends State<LeftDrawer> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.deepPurple[100],
         appBar: AppBar(
           title: Text("Information"),
-          backgroundColor: Colors.cyan[500],
+          backgroundColor: Colors.deepPurple,
           leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -33,11 +36,47 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               height: 50,
-              child: Center(child: Text("Personal Information")),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(
+                    Icons.account_circle_outlined,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Personal Information",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ],
+              ),
             ),
             Container(
               height: 50,
-              child: Center(child: Text("Update Supplies")),
+              child: Center(
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Icon(
+                      Icons.add_chart,
+                      size: 30,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Update Sypply",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                ),
+              ),
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 2,
@@ -47,34 +86,71 @@ class _LeftDrawerState extends State<LeftDrawer> {
             ),
             Container(
               height: 50,
-              child: Center(child: Text("Add a blog")),
+              child: Center(
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Icon(
+                      Icons.logout,
+                      size: 30,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        signOutGoogle();
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyHome()),
+                        );
+                      },
+                      child: Text(
+                        "Logout ",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 2,
                   color: Colors.black,
                 ),
               ),
+            ),
+            SizedBox(
+              height: 100,
             ),
             Container(
-              height: 50,
-              child: Center(child: Text("Add a store")),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2,
-                  color: Colors.black,
-                ),
+              child: Column(
+                children: [
+                  Text(
+                    "Team RetroSynth",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "Kavya Kandhway",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    "Ankita Jaiswal",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    "Yashi Khandelwal",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    "Ishan Kumar",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ],
               ),
-            ),
-            Container(
-              height: 50,
-              child: Center(child: Text("Logout")),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2,
-                  color: Colors.black,
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),

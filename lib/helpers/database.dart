@@ -79,6 +79,7 @@ class DatabaseService {
       'content': blogData.content,
       'tags': blogData.tags,
       'anonymous': blogData.anonymous,
+      'imagelink': blogData.imageLink,
     });
   }
   // brew list from a snapshot

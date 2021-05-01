@@ -11,6 +11,7 @@ class _MedicineState extends State<Medicine> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple[100],
       body: StreamBuilder(
           stream: FirebaseFirestore.instance.collection('store').snapshots(),
           builder:
@@ -23,10 +24,10 @@ class _MedicineState extends State<Medicine> {
             return ListView(
               children: snapshot.data.docs.map((document) {
                 return Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.cyan[100],
+                      color: Colors.white,
                       // border: Border.all(
                       //   color: Colors.black,
                       //   width: 1.2,
@@ -58,73 +59,42 @@ class _MedicineState extends State<Medicine> {
                               ),
                             ],
                           ),
-                          Text(
-                            "Categories ",
-                            style: TextStyle(color: Colors.black),
+                          SizedBox(
+                            height: 10,
                           ),
                           Row(
                             children: [
                               document['bakery']
                                   ? Container(
-                                      child: Text("Bakery "),
-                                      width: 70,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Colors.cyan[500])),
+                                      child: Text("Bakery   "),
                                     )
                                   : SizedBox(
                                       height: 0,
                                     ),
                               document['dairy']
                                   ? Container(
-                                      child: Text("Dairy "),
-                                      width: 50,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Colors.cyan[500])),
+                                      child: Text("Dairy   "),
                                     )
                                   : SizedBox(
                                       height: 0,
                                     ),
                               document['grocery']
                                   ? Container(
-                                      child: Text("Grocery "),
-                                      width: 90,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Colors.cyan[500])),
+                                      child: Text("Grocery   "),
                                     )
                                   : SizedBox(
                                       height: 0,
                                     ),
                               document['medical']
                                   ? Container(
-                                      child: Text("Medical "),
-                                      width: 100,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Colors.cyan[500])),
+                                      child: Text("Medical   "),
                                     )
                                   : SizedBox(
                                       height: 0,
                                     ),
                               document['personalbaby']
                                   ? Container(
-                                      child: Text("Personal Care "),
-                                      width: 100,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Colors.cyan[500])),
+                                      child: Text("Personal Care   "),
                                     )
                                   : SizedBox(
                                       height: 0,
