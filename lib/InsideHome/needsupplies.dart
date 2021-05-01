@@ -75,7 +75,10 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                               (rem.contains(toSearch[0].toLowerCase()) &&
                                   document['rem']) ||
                               (fav.contains(toSearch[0].toLowerCase()) &&
-                                  document['fav'])) {
+                                  document['fav']) ||
+                              document['state']
+                                  .toLowerCase()
+                                  .contains(toSearch[0].toLowerCase())) {
                             return Center(
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -566,6 +569,181 @@ class _NeedSuppliesState extends State<NeedSupplies> {
                                 ),
                               ),
                             );
+                          } else if (document['state']
+                                  .toLowerCase()
+                                  .contains(toSearch[1].toLowerCase()) &&
+                              ((oxy.contains(toSearch[0].toLowerCase()) &&
+                                      document['oxygen']) ||
+                                  (bed.contains(toSearch[0].toLowerCase()) &&
+                                      document['bed']) ||
+                                  (rem.contains(toSearch[0].toLowerCase()) &&
+                                      document['rem']) ||
+                                  (fav.contains(toSearch[0].toLowerCase()) &&
+                                      document['fav']))) {
+                            return Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width - 30,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          child: Text(
+                                            document['supplyname'],
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Container(
+                                          child: Text(
+                                              "Phone no. " + document['phone']),
+                                          alignment: Alignment.topLeft,
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(document['city']),
+                                        Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            child: Text(
+                                              "Items Available ",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                              textAlign: TextAlign.left,
+                                            )),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Column(
+                                              children: [
+                                                document['oxygen']
+                                                    ? Container(
+                                                        child: Text(
+                                                          "Oxygen ",
+                                                          textAlign:
+                                                              TextAlign.left,
+                                                        ),
+                                                        width: 100,
+                                                        height: 30,
+                                                      )
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                                document['bed']
+                                                    ? Container(
+                                                        child: Text("Bed "),
+                                                        width: 100,
+                                                        height: 30,
+                                                      )
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                                document['rem']
+                                                    ? Container(
+                                                        child:
+                                                            Text("Remdesivir "),
+                                                        width: 100,
+                                                        height: 30,
+                                                      )
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                                document['fav']
+                                                    ? Container(
+                                                        child: Text(
+                                                            "Favipiravir "),
+                                                        width: 100,
+                                                        height: 30,
+                                                      )
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                document['oxygen']
+                                                    ? Container(
+                                                        width: 100,
+                                                        height: 30,
+                                                        child: Text("Rs." +
+                                                            document['oxyamt']
+                                                                .toString() +
+                                                            "/unit"))
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                                document['bed']
+                                                    ? Container(
+                                                        width: 100,
+                                                        height: 30,
+                                                        child: Text("Rs." +
+                                                            document['bedamt']
+                                                                .toString() +
+                                                            "/unit"))
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                                document['rem']
+                                                    ? Container(
+                                                        width: 100,
+                                                        height: 30,
+                                                        child: Text("Rs." +
+                                                            document['remamt']
+                                                                .toString() +
+                                                            "/unit"))
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                                document['fav']
+                                                    ? Container(
+                                                        width: 100,
+                                                        height: 30,
+                                                        child: Text("Rs." +
+                                                            document['favamt']
+                                                                .toString() +
+                                                            "/unit"))
+                                                    : SizedBox(
+                                                        height: 0,
+                                                      ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+                          } else if (document['state']
+                                  .toLowerCase()
+                                  .contains(toSearch[0].toLowerCase()) &&
+                              ((oxy.contains(toSearch[1].toLowerCase()) &&
+                                      document['oxygen']) ||
+                                  (bed.contains(toSearch[1].toLowerCase()) &&
+                                      document['bed']) ||
+                                  (rem.contains(toSearch[1].toLowerCase()) &&
+                                      document['rem']) ||
+                                  (fav.contains(toSearch[1].toLowerCase()) &&
+                                      document['fav']))) {
                           } else {
                             print("here4");
                             return Container(
