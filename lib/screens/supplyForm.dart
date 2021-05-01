@@ -75,12 +75,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 1.0),
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -117,12 +117,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 1.0),
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -218,12 +218,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 1.0),
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -259,12 +259,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 1.0),
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -286,12 +286,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 1.0),
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -327,12 +327,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 1.0),
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -736,12 +736,12 @@ class _SupplyFormState extends State<SupplyForm> {
                     ),
                     child: Center(
                         child: Text(
-                      "Submit",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white),
-                    )),
+                          "Submit",
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        )),
                   ),
                 ),
               ],

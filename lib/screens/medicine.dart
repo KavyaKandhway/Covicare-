@@ -66,39 +66,39 @@ class _MedicineState extends State<Medicine> {
                             children: [
                               document['bakery']
                                   ? Container(
-                                      child: Text("Bakery   "),
-                                    )
+                                child: Text("Bakery   "),
+                              )
                                   : SizedBox(
-                                      height: 0,
-                                    ),
+                                height: 0,
+                              ),
                               document['dairy']
                                   ? Container(
-                                      child: Text("Dairy   "),
-                                    )
+                                child: Text("Dairy   "),
+                              )
                                   : SizedBox(
-                                      height: 0,
-                                    ),
+                                height: 0,
+                              ),
                               document['grocery']
                                   ? Container(
-                                      child: Text("Grocery   "),
-                                    )
+                                child: Text("Grocery   "),
+                              )
                                   : SizedBox(
-                                      height: 0,
-                                    ),
+                                height: 0,
+                              ),
                               document['medical']
                                   ? Container(
-                                      child: Text("Medical   "),
-                                    )
+                                child: Text("Medical   "),
+                              )
                                   : SizedBox(
-                                      height: 0,
-                                    ),
+                                height: 0,
+                              ),
                               document['personalbaby']
                                   ? Container(
-                                      child: Text("Personal Care   "),
-                                    )
+                                child: Text("Personal Care   "),
+                              )
                                   : SizedBox(
-                                      height: 0,
-                                    ),
+                                height: 0,
+                              ),
                             ],
                           ),
                         ],

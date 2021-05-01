@@ -48,20 +48,20 @@ class _SectionPageState extends State<SectionPage> {
           backgroundColor: Colors.deepPurple[100],
           appBar: AppBar(
             backgroundColor: Colors.deepPurple,
-            leading: IconButton(
-              icon: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LeftDrawer()),
-                  );
-                },
-                child: Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            // leading: IconButton(
+            //   icon: GestureDetector(
+            //     onTap: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(builder: (context) => LeftDrawer()),
+            //       );
+            //     },
+            //     child: Icon(
+            //       Icons.menu,
+            //       color: Colors.white,
+            //     ),
+            //   ),
+            // ),
             title: Text(
               appheading[_currentIndex],
               style: TextStyle(color: Colors.black),
@@ -84,6 +84,7 @@ class _SectionPageState extends State<SectionPage> {
               ),
             ],
           ),
+          drawer: LeftDrawer(),
           body: tabs[_currentIndex],
           bottomNavigationBar: Theme(
             data: Theme.of(context).copyWith(

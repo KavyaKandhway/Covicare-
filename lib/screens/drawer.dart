@@ -1,6 +1,9 @@
 import 'package:covicare/helpers/google_auth.dart';
 import 'package:covicare/main.dart';
 import 'package:flutter/material.dart';
+import 'package:covicare/screens/storeform.dart';
+import 'package:covicare/screens/supplyForm.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class LeftDrawer extends StatefulWidget {
   @override
@@ -10,149 +13,157 @@ class LeftDrawer extends StatefulWidget {
 class _LeftDrawerState extends State<LeftDrawer> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.deepPurple[100],
-        appBar: AppBar(
-          title: Text("Information"),
-          backgroundColor: Colors.deepPurple,
-          leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            ),
-          ),
-        ),
-        body: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2,
-                  color: Colors.black,
-                ),
-              ),
-              height: 50,
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(
-                    Icons.account_circle_outlined,
-                    size: 30,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    "Personal Information",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 50,
-              child: Center(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Icon(
-                      Icons.add_chart,
-                      size: 30,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "Update Sypply",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ],
-                ),
-              ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            Container(
-              height: 50,
-              child: Center(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Icon(
-                      Icons.logout,
-                      size: 30,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        signOutGoogle();
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => MyHome()),
-                        );
-                      },
-                      child: Text(
-                        "Logout ",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 2,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            Container(
+    return Drawer(
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(12),
+            color: Colors.deepPurple,
+            child: Center(
               child: Column(
                 children: [
-                  Text(
-                    "Team RetroSynth",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  Container(
+                    width: 120,
+                    height: 120,
+                    margin: EdgeInsets.only(
+                      top: 30,
+                    ),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage("images/sample.jpg"),
+                          fit:BoxFit.fill,
+                      ),
+                    ),
                   ),
                   Text(
-                    "Kavya Kandhway",
-                    style: TextStyle(fontSize: 18),
+                    "title",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
                   ),
                   Text(
-                    "Ankita Jaiswal",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  Text(
-                    "Yashi Khandelwal",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  Text(
-                    "Ishan Kumar",
-                    style: TextStyle(fontSize: 18),
+                    "user email id",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+          ListTile(
+            leading:Icon(
+              Icons.account_circle_outlined,
+              size: 30,
+            ),
+            title: Text('Profile',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHome()),
+                );
+              }
+          ),
+          ListTile(
+            leading:Icon(
+              Icons.add_chart,
+              size: 30,
+            ),
+            title: Text('Update Supply',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => SupplyForm()),
+                );
+              }
+          ),
+          ListTile(
+            leading:Icon(
+              Icons.add_business,
+              size: 30,
+            ),
+            title: Text('Update Local Store',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => StoreForm()),
+                );
+              }
+          ),
+          ListTile(
+            leading:Icon(
+              Icons.developer_board,
+              size: 30,
+            ),
+            title: Text('About Us',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHome()),
+                );
+              }
+          ),
+          ListTile(
+              leading:Icon(
+                Icons.developer_board,
+                size: 30,
+              ),
+              title: Text('Delete Supply',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHome()),
+                );
+              }
+          ),
+          ListTile(
+            leading:Icon(
+              Icons.logout,
+              size: 30,
+            ),
+            title: Text('Logout',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            onTap: () {
+              signOutGoogle();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => MyHome()),
+              );
+            }
+            ),
+        ],
       ),
     );
   }
