@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "191358948683",
+    "project_id": "covicare-96b49",
+    "storage_bucket": "covicare-96b49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191358948683:android:705d18767d9b66370cc4ce",
+        "android_client_info": {
+          "package_name": "com.example.covicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191358948683-9giubqqek1v1mea9o0mmiqom724fvm8s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.covicare",
+            "certificate_hash": "5f75ab54d427d02abc960be6034974b5d26a43b2"
+          }
+        },
+        {
+          "client_id": "191358948683-a84jvfhe6veqihdbb7g43aios7l072rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDfbMeHyhMLJNeNB3k__vhKcckQBiNWZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191358948683-a84jvfhe6veqihdbb7g43aios7l072rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
