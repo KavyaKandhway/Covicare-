@@ -25,6 +25,11 @@ class DatabaseService {
     });
   }
 
+  Future deleteSupply() async {
+    print("entered");
+    return await supplyCollection.doc(uid).delete();
+  }
+
   Future updateSupplyData(Supply supplyData) async {
     return await supplyCollection.doc(uid).set({
       'supplyname': supplyData.name,
