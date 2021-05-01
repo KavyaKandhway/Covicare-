@@ -1,10 +1,15 @@
 import 'package:covicare/helpers/google_auth.dart';
 import 'package:covicare/main.dart';
 import 'package:covicare/screens/aboutus.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/screens/storeform.dart';
 import 'package:covicare/screens/supplyForm.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:covicare/helpers/database.dart';
+
+final _auth = FirebaseAuth.instance;
+dynamic user;
 
 class LeftDrawer extends StatefulWidget {
   @override
@@ -33,8 +38,8 @@ class _LeftDrawerState extends State<LeftDrawer> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          image: AssetImage("images/sample.jpg"),
-                          fit:BoxFit.fill,
+                        image: AssetImage("images/sample.jpg"),
+                        fit: BoxFit.fill,
                       ),
                     ),
                   ),
@@ -57,83 +62,12 @@ class _LeftDrawerState extends State<LeftDrawer> {
             ),
           ),
           ListTile(
-            leading:Icon(
-              Icons.account_circle_outlined,
-              size: 30,
-            ),
-            title: Text('Profile',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-              onTap: () {
-                signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHome()),
-                );
-              }
-          ),
-          ListTile(
-            leading:Icon(
-              Icons.add_chart,
-              size: 30,
-            ),
-            title: Text('Update Supply',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-              onTap: () {
-                signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => SupplyForm()),
-                );
-              }
-          ),
-          ListTile(
-            leading:Icon(
-              Icons.add_business,
-              size: 30,
-            ),
-            title: Text('Update Local Store',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-              onTap: () {
-                signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => StoreForm()),
-                );
-              }
-          ),
-          ListTile(
-            leading:Icon(
-              Icons.developer_board,
-              size: 30,
-            ),
-            title: Text('About Us',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-              onTap: () {
-                signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => AboutUs()),
-                );
-              }
-          ),
-          ListTile(
-              leading:Icon(
-                Icons.developer_board,
+              leading: Icon(
+                Icons.account_circle_outlined,
                 size: 30,
               ),
-              title: Text('Delete Supply',
+              title: Text(
+                'Profile',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -144,26 +78,94 @@ class _LeftDrawerState extends State<LeftDrawer> {
                   context,
                   MaterialPageRoute(builder: (context) => MyHome()),
                 );
-              }
-          ),
+              }),
           ListTile(
-            leading:Icon(
-              Icons.logout,
-              size: 30,
-            ),
-            title: Text('Logout',
-              style: TextStyle(
-                fontSize: 18,
+              leading: Icon(
+                Icons.add_chart,
+                size: 30,
               ),
-            ),
-            onTap: () {
-              signOutGoogle();
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => MyHome()),
-              );
-            }
-            ),
+              title: Text(
+                'Update Supply',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => SupplyForm()),
+                );
+              }),
+          ListTile(
+              leading: Icon(
+                Icons.add_business,
+                size: 30,
+              ),
+              title: Text(
+                'Update Local Store',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => StoreForm()),
+                );
+              }),
+          ListTile(
+              leading: Icon(
+                Icons.developer_board,
+                size: 30,
+              ),
+              title: Text(
+                'About Us',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutUs()),
+                );
+              }),
+          ListTile(
+              leading: Icon(
+                Icons.developer_board,
+                size: 30,
+              ),
+              title: Text(
+                'Delete Supply',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              onTap: () async {
+                user = _auth.currentUser;
+                await DatabaseService(uid: user.uid).deleteSupply();
+              }),
+          ListTile(
+              leading: Icon(
+                Icons.logout,
+                size: 30,
+              ),
+              title: Text(
+                'Logout',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              onTap: () {
+                signOutGoogle();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHome()),
+                );
+              }),
         ],
       ),
     );
