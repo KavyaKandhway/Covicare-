@@ -31,7 +31,7 @@ class _BlogFormState extends State<BlogForm> {
       child: Scaffold(
         appBar: AppBar(
           title: Text("Add Blog"),
-          backgroundColor: Colors.cyan[500],
+          backgroundColor: Colors.deepPurple,
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -45,7 +45,7 @@ class _BlogFormState extends State<BlogForm> {
                 Text(
                   "Create your own Blog!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, color: Colors.cyan),
+                  style: TextStyle(fontSize: 20, color: Colors.deepPurple),
                 ),
                 SizedBox(
                   height: 20.0,
@@ -58,21 +58,21 @@ class _BlogFormState extends State<BlogForm> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.person,
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
                     labelText: 'Name of the Publisher',
                     labelStyle: TextStyle(
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
 
                     //DesignationField
 
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.cyan),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
+                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -88,18 +88,18 @@ class _BlogFormState extends State<BlogForm> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.work,
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
                     labelText: "Publisher's Designation",
                     labelStyle: TextStyle(
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.cyan),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
+                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -113,17 +113,17 @@ class _BlogFormState extends State<BlogForm> {
                   controller: title,
                   maxLength: 40,
                   decoration: InputDecoration(
-                    icon: Icon(Icons.favorite, color: Colors.cyan),
+                    icon: Icon(Icons.favorite, color: Colors.deepPurple),
                     labelText: 'Title of the Article',
                     labelStyle: TextStyle(
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.cyan),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
+                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -139,19 +139,19 @@ class _BlogFormState extends State<BlogForm> {
                   minLines: 7,
                   maxLines: 10,
                   decoration: InputDecoration(
-                    icon: Icon(Icons.article_outlined, color: Colors.cyan),
+                    icon: Icon(Icons.article_outlined, color: Colors.deepPurple),
                     fillColor: Colors.grey[300],
                     filled: true,
                     labelText: 'Article Content',
                     labelStyle: TextStyle(
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.cyan),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
+                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -166,7 +166,7 @@ class _BlogFormState extends State<BlogForm> {
                   decoration: InputDecoration(
                     icon: Icon(
                       Icons.article_outlined,
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
                     fillColor: Colors.grey[300],
                     filled: true,
@@ -174,14 +174,14 @@ class _BlogFormState extends State<BlogForm> {
                         'Add maximum five keywords related to your Article',
                     labelStyle: TextStyle(
                       fontSize: 15,
-                      color: Colors.cyan,
+                      color: Colors.deepPurple,
                     ),
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.cyan),
+                      borderSide: BorderSide(color: Colors.deepPurple),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
+                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -218,10 +218,13 @@ class _BlogFormState extends State<BlogForm> {
                   child: new Container(
                     padding: const EdgeInsets.only(left: 150.0, top: 40.0),
                     child: new ElevatedButton(
-                      child: const Text('Submit'),
+                      child: const Text(
+                          'Submit',
+                        style: TextStyle(color: Colors.white),
+                      ),
                       style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all(Colors.cyan),
+                              MaterialStateProperty.all(Colors.deepPurple),
                           padding:
                               MaterialStateProperty.all(EdgeInsets.all(20)),
                           textStyle: MaterialStateProperty.all(
