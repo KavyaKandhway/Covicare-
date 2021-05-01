@@ -1,11 +1,17 @@
+import 'package:covicare/helpers/database.dart';
 import 'package:csc_picker/csc_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:covicare/models/store.dart';
 
 class StoreForm extends StatefulWidget {
   @override
   _StoreFormState createState() => _StoreFormState();
 }
+
+final _auth = FirebaseAuth.instance;
+dynamic user;
 
 class _StoreFormState extends State<StoreForm> {
   TextEditingController name = TextEditingController();
@@ -455,6 +461,44 @@ class _StoreFormState extends State<StoreForm> {
                         },
                       ),
                     ],
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                GestureDetector(
+                  onTap: () async {
+                    print("Entered");
+                    Store store = Store(
+                      name: name.text,
+                      contact: contact.text,
+                      country: countryValue,
+                      state: stateValue,
+                      city: cityValue,
+                      pincode: pincode.text,
+                      address1: address1.text,
+                      address2: address2.text,
+                      landmark: landmark.text,
+                      grocery: grocery,
+                      medical: medical,
+                      dairy: dairy,
+                      bakery:bakery,
+                      personalcare:personalcare
+                    );
+                    user = _auth.currentUser;
+                    print("database=================");
+                    await DatabaseService(uid: user.uid)
+                        .updateStoreData(store);
+                  },
+                  child: Container(
+                    height: 40,
+                    width: MediaQuery.of(context).size.width - 30,
+                    decoration: BoxDecoration(
+                      color: Colors.cyan[100],
+                      border: Border.all(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Center(child: Text("Submit")),
                   ),
                 ),
               ],

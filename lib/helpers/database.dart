@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:covicare/models/supply.dart';
+import 'package:covicare/models/store.dart';
 
 class DatabaseService {
   final String uid;
@@ -9,7 +10,8 @@ class DatabaseService {
       FirebaseFirestore.instance.collection('user');
   final CollectionReference supplyCollection =
       FirebaseFirestore.instance.collection('supply');
-
+  final CollectionReference storeCollection =
+      FirebaseFirestore.instance.collection('store');
   Future updateUserData(String userid, String name, String email) async {
     print("entered");
     return await userCollection.doc(uid).set({
@@ -42,6 +44,26 @@ class DatabaseService {
       'remqnt': supplyData.remQnt,
       'favamt': supplyData.favAmt,
       'favqnt': supplyData.favQnt,
+    });
+  }
+
+  Future updateStoreData(Store storeData) async {
+    return await storeCollection.doc(uid).set({
+      'name': storeData.name,
+      'contact': storeData.contact,
+      'country': storeData.country,
+      'state': storeData.state,
+      'city': storeData.city,
+      'pincode': storeData.pincode,
+      'address1': storeData.address1,
+      'address2': storeData.address2,
+      'landmark': storeData.landmark,
+      'grocery': storeData.grocery,
+      'medical': storeData.medical,
+      'dairy': storeData.dairy,
+      'bakery': storeData.bakery,
+      'homekitchen': storeData.homekitchen,
+      'personalbaby': storeData.personalcare,
     });
   }
   // brew list from a snapshot
