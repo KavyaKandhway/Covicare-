@@ -23,10 +23,10 @@ class _MedicineState extends State<Medicine> {
             return ListView(
               children: snapshot.data.docs.map((document) {
                 return Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.cyan[50],
+                      color: Colors.cyan[100],
                       // border: Border.all(
                       //   color: Colors.black,
                       //   width: 1.2,
