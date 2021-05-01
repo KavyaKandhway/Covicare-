@@ -43,8 +43,9 @@ class _SectionPageState extends State<SectionPage> {
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.deepPurple[100],
           appBar: AppBar(
-            backgroundColor: Colors.cyan[500],
+            backgroundColor: Colors.deepPurple,
             leading: IconButton(
               icon: GestureDetector(
                 onTap: () {
@@ -55,7 +56,7 @@ class _SectionPageState extends State<SectionPage> {
                 },
                 child: Icon(
                   Icons.menu,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -67,7 +68,7 @@ class _SectionPageState extends State<SectionPage> {
               IconButton(
                 icon: Icon(
                   Icons.exit_to_app,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ],
@@ -83,27 +84,27 @@ class _SectionPageState extends State<SectionPage> {
                     .textTheme
                     .copyWith(caption: new TextStyle(color: Colors.yellow))),
             child: BottomNavigationBar(
-              backgroundColor: Colors.cyan[500],
+              backgroundColor: Colors.deepPurple,
               currentIndex: _currentIndex,
               items: [
                 BottomNavigationBarItem(
                     label: 'Home',
                     icon: Icon(
                       Icons.home,
-                      color: _currentIndex == 0 ? Colors.black : Colors.black38,
+                      color: _currentIndex == 0 ? Colors.white : Colors.black,
                     )),
                 BottomNavigationBarItem(
                     label: 'Blog',
                     backgroundColor: Colors.black,
                     icon: Icon(
                       Icons.add_comment,
-                      color: _currentIndex == 1 ? Colors.black : Colors.black38,
+                      color: _currentIndex == 1 ? Colors.white : Colors.black,
                     )),
                 BottomNavigationBarItem(
                     label: 'Local Store',
                     icon: Icon(
                       Icons.local_grocery_store,
-                      color: _currentIndex == 2 ? Colors.black : Colors.black38,
+                      color: _currentIndex == 2 ? Colors.white : Colors.black,
                     ))
               ],
               onTap: (index) {

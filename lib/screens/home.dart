@@ -14,6 +14,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.deepPurple[100],
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -40,7 +41,10 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: InkWell(
-                      child: HomeCard(data: 'Need Supplies'),
+                      child: HomeCard(
+                        data: 'Need Supplies',
+                        logo: 'images/needsupply.png',
+                      ),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -59,7 +63,11 @@ class _HomeState extends State<Home> {
                                 builder: (context) => SupplyForm()),
                           );
                         },
-                        child: Center(child: HomeCard(data: 'Sell Supplies'))),
+                        child: Center(
+                            child: HomeCard(
+                          data: 'Sell Supplies',
+                          logo: 'images/sellsupply.jfif',
+                        ))),
                   )
                 ],
               ),
@@ -77,10 +85,16 @@ class _HomeState extends State<Home> {
                                   builder: (context) => StoreForm()),
                             );
                           },
-                          child: HomeCard(data: 'Add Local Store'))),
+                          child: HomeCard(
+                            data: 'Add Local Store',
+                            logo: 'images/localstore.png',
+                          ))),
                   Expanded(
                     child: InkWell(
-                      child: HomeCard(data: 'Add Blog'),
+                      child: HomeCard(
+                        data: 'Add Blog',
+                        logo: 'images/addblog.jfif',
+                      ),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -101,26 +115,32 @@ class _HomeState extends State<Home> {
 
 class HomeCard extends StatelessWidget {
   String data;
-  HomeCard({this.data});
+  String logo;
+  HomeCard({this.data, this.logo});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        decoration: BoxDecoration(
-          color: Colors.cyan[200],
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-        ),
-        height: double.infinity,
-        child: Center(
-          child: Text(
-            data,
-            style: TextStyle(
-              fontSize: 20,
-            ),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(40)),
           ),
-        ),
-      ),
+          height: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset(logo),
+              Center(
+                child: Text(
+                  data,
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
