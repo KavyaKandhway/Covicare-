@@ -3,6 +3,8 @@ import 'package:covicare/screens/drawer.dart';
 import 'package:covicare/screens/home.dart';
 import 'package:covicare/screens/medicine.dart';
 import 'package:flutter/material.dart';
+import 'package:covicare/main.dart';
+import '../helpers/google_auth.dart';
 
 class Section extends StatelessWidget {
   // This widget is the root of your application.
@@ -66,9 +68,18 @@ class _SectionPageState extends State<SectionPage> {
             ),
             actions: [
               IconButton(
-                icon: Icon(
-                  Icons.exit_to_app,
-                  color: Colors.white,
+                icon: GestureDetector(
+                  onTap: () {
+                    signOutGoogle();
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHome()),
+                    );
+                  },
+                  child: Icon(
+                    Icons.exit_to_app,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

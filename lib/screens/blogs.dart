@@ -54,14 +54,15 @@ class _BlogState extends State<Blog> {
                                   ),
                                   Center(
                                     child: Image(
-                                      image: AssetImage('images/sample.jpg'),
+                                      image: AssetImage(
+                                          'images/' + document['imagelink']),
                                     ),
                                   ),
                                   Padding(
                                       padding: const EdgeInsets.all(20.0),
                                       child: Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Icon(
                                             Icons.favorite,

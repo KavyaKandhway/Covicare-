@@ -22,19 +22,16 @@ class _SupplyFormState extends State<SupplyForm> {
   TextEditingController address1 = TextEditingController();
   TextEditingController address2 = TextEditingController();
   TextEditingController landmark = TextEditingController();
-  TextEditingController oxygenQuantity = TextEditingController();
-  TextEditingController oxygenAmt = TextEditingController();
-  TextEditingController bedQuantity = TextEditingController();
-  TextEditingController bedAmt = TextEditingController();
-  TextEditingController remQuantity = TextEditingController();
-  TextEditingController remAmt = TextEditingController();
-  TextEditingController favQuantity = TextEditingController();
-  TextEditingController favAmt = TextEditingController();
+  TextEditingController oxygenQuantity = TextEditingController(text: '0');
+  TextEditingController oxygenAmt = TextEditingController(text: '0');
+  TextEditingController bedQuantity = TextEditingController(text: '0');
+  TextEditingController bedAmt = TextEditingController(text: '0');
+  TextEditingController remQuantity = TextEditingController(text: '0');
+  TextEditingController remAmt = TextEditingController(text: '0');
+  TextEditingController favQuantity = TextEditingController(text: '0');
+  TextEditingController favAmt = TextEditingController(text: '0');
   String countryValue = '', stateValue = '', cityValue = '';
-  bool oxygen = false,
-      favipiravir = false,
-      bed = false,
-      remdesivir = false;
+  bool oxygen = false, favipiravir = false, bed = false, remdesivir = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -78,11 +75,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -114,15 +112,17 @@ class _SupplyFormState extends State<SupplyForm> {
                     keyboardType: TextInputType.number,
                     maxLength: 10,
                     decoration: InputDecoration(
-                      labelText: "contact Number",
+                      labelText: "Phone Number",
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -150,12 +150,12 @@ class _SupplyFormState extends State<SupplyForm> {
                   flagState: CountryFlag.SHOW_IN_DROP_DOWN_ONLY,
                   dropdownDecoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Colors.deepPurple[50],
-                      border: Border.all(color: Colors.deepPurple, width: 2)),
+                      color: Colors.white,
+                      border: Border.all(color: Colors.deepPurple, width: 1)),
                   disabledDropdownDecoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       color: Colors.grey.shade300,
-                      border: Border.all(color: Colors.grey[300], width: 1)),
+                      border: Border.all(color: Colors.deepPurple, width: 1)),
                   selectedItemStyle: TextStyle(
                     color: Colors.black,
                     fontSize: 14,
@@ -217,11 +217,13 @@ class _SupplyFormState extends State<SupplyForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -256,11 +258,13 @@ class _SupplyFormState extends State<SupplyForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -273,7 +277,7 @@ class _SupplyFormState extends State<SupplyForm> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:TextField(
+                  child: TextField(
                     controller: address2,
                     maxLength: 40,
                     decoration: InputDecoration(
@@ -281,11 +285,13 @@ class _SupplyFormState extends State<SupplyForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -312,7 +318,7 @@ class _SupplyFormState extends State<SupplyForm> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:TextField(
+                  child: TextField(
                     controller: landmark,
                     maxLength: 40,
                     decoration: InputDecoration(
@@ -320,11 +326,13 @@ class _SupplyFormState extends State<SupplyForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -357,7 +365,7 @@ class _SupplyFormState extends State<SupplyForm> {
                       ),
                       Container(
                         child: Text(
-                          "Amt/unit",
+                          "Price/unit",
                         ),
                       ),
                       SizedBox(
@@ -404,12 +412,14 @@ class _SupplyFormState extends State<SupplyForm> {
                                       focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.zero,
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -426,14 +436,16 @@ class _SupplyFormState extends State<SupplyForm> {
                                     decoration: InputDecoration(
                                       counterText: "",
                                       focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -472,14 +484,16 @@ class _SupplyFormState extends State<SupplyForm> {
                                     decoration: InputDecoration(
                                       counterText: "",
                                       focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -496,14 +510,16 @@ class _SupplyFormState extends State<SupplyForm> {
                                     decoration: InputDecoration(
                                       counterText: "",
                                       focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -542,14 +558,16 @@ class _SupplyFormState extends State<SupplyForm> {
                                     decoration: InputDecoration(
                                       counterText: "",
                                       focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -566,14 +584,16 @@ class _SupplyFormState extends State<SupplyForm> {
                                     decoration: InputDecoration(
                                       counterText: "",
                                       focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -612,14 +632,16 @@ class _SupplyFormState extends State<SupplyForm> {
                                     decoration: InputDecoration(
                                       counterText: "",
                                       focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.cyan, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.cyan, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -638,12 +660,14 @@ class _SupplyFormState extends State<SupplyForm> {
                                       focusedBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.zero,
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 3.0),
+                                            color: Colors.deepPurple,
+                                            width: 3.0),
                                       ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.zero,
+                                        borderRadius: BorderRadius.circular(10),
                                         borderSide: BorderSide(
-                                            color: Colors.deepPurple, width: 1.0),
+                                            color: Colors.deepPurple,
+                                            width: 1.0),
                                       ),
                                     ),
                                   ),
@@ -704,17 +728,20 @@ class _SupplyFormState extends State<SupplyForm> {
                   },
                   child: Container(
                     height: 60,
-                    width: MediaQuery.of(context).size.width - 180,
+                    width: MediaQuery.of(context).size.width - 30,
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple[500],
-                      border: Border.all(width: 2, color: Colors.deepPurple[500]),
+                      color: Colors.deepPurple,
+                      border: Border.all(width: 2, color: Colors.black),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Center(
-                        child: Text("Submit",
-                        style: TextStyle(color: Colors.white),
-                        )
-                    ),
+                        child: Text(
+                          "Submit",
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        )),
                   ),
                 ),
               ],
