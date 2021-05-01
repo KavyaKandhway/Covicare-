@@ -1,10 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:covicare/models/blog.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:covicare/helpers/database.dart';
 
 class BlogForm extends StatefulWidget {
   @override
   _BlogFormState createState() => _BlogFormState();
 }
+
+final _auth = FirebaseAuth.instance;
+dynamic user;
 
 class _BlogFormState extends State<BlogForm> {
   final _blogFormKey = GlobalKey<FormState>();
@@ -14,8 +21,7 @@ class _BlogFormState extends State<BlogForm> {
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
   TextEditingController tags = TextEditingController();
-  String anoy = "";
-  bool fame = false;
+  bool anonymous = false;
 
   @override
   Widget build(BuildContext context) {
@@ -163,7 +169,7 @@ class _BlogFormState extends State<BlogForm> {
                     fillColor: Colors.grey[300],
                     filled: true,
                     labelText:
-                        'Add maximum five keywords related to your Article',
+                    'Add maximum five keywords related to your Article',
                     labelStyle: TextStyle(
                       fontSize: 15,
                       color: Colors.cyan,
@@ -180,31 +186,40 @@ class _BlogFormState extends State<BlogForm> {
                 CheckboxListTile(
                   title: Text("Write Anonymously ?"),
                   tristate: true,
-                  value: fame,
+                  value: anonymous,
                   controlAffinity: ListTileControlAffinity.leading,
                   onChanged: (bool value) {
                     setState(() {
-                      fame = value;
+                      anonymous = value;
                     });
                   },
                 ),
-                new Container(
-                  padding: const EdgeInsets.only(left: 150.0, top: 40.0),
-                  child: new ElevatedButton(
-                    child: const Text('Submit'),
-                    onPressed: () {
-                      // It returns true if the form is valid, otherwise returns false
-                      if (_blogFormKey.currentState.validate()) {
-                        var snackBar =
-                            SnackBar(content: Text('Processing Shit'));
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      }
-                    },
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.cyan),
-                        padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                        textStyle:
-                            MaterialStateProperty.all(TextStyle(fontSize: 15))),
+                GestureDetector(
+                  onTap: () async {
+                    print("Entered");
+                    Blog blog = Blog(
+                      name: name.text,
+                      designation:designation.text,
+                      title: title.text,
+                      content:content.text,
+                      anonymous:anonymous,
+                      tags:tags.text,
+                    );
+                    user = _auth.currentUser;
+                    print("Blog-database=================");
+                    await DatabaseService(uid: user.uid)
+                        .updateBlogData(blog);
+                  },
+                  child: new Container(
+                    padding: const EdgeInsets.only(left: 150.0, top: 40.0),
+                    child: new ElevatedButton(
+                      child: const Text('Submit'),
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.cyan),
+                          padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                          textStyle:
+                          MaterialStateProperty.all(TextStyle(fontSize: 15))),
+                    ),
                   ),
                 ),
               ],
