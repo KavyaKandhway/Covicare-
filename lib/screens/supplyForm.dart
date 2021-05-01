@@ -36,9 +36,10 @@ class _SupplyFormState extends State<SupplyForm> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.deepPurple[100],
         appBar: AppBar(
           title: Text("Sell/Donate Supplies"),
-          backgroundColor: Colors.cyan[500],
+          backgroundColor: Colors.deepPurple,
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -60,19 +61,26 @@ class _SupplyFormState extends State<SupplyForm> {
                 SizedBox(
                   height: 10.0,
                 ),
-                TextField(
-                  controller: name,
-                  maxLength: 40,
-                  decoration: InputDecoration(
-                    labelText: "name",
-                    counterText: "",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 3.0),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TextField(
+                    controller: name,
+                    maxLength: 40,
+                    decoration: InputDecoration(
+                      labelText: "Name",
+                      counterText: "",
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(color: Colors.cyan, width: 1.0),
+                      ),
                     ),
                   ),
                 ),

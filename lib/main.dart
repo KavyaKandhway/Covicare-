@@ -21,11 +21,12 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.deepPurple.shade100,
         appBar: AppBar(
-          backgroundColor: Colors.cyan[100],
+          backgroundColor: Colors.deepPurple,
           title: Text(
             "CoviCare",
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
         ),
         body: Column(
@@ -52,16 +53,19 @@ class MyHome extends StatelessWidget {
               child: Container(
                 height: 50.0,
                 child: Center(
-                  child: Text(
-                    "Login With Email",
-                    style: TextStyle(color: Colors.black, fontSize: 15),
+                  child: Container(
+                    child: Text(
+                      "Login With Email",
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
                   ),
                 ),
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.black,
+                    color: Colors.deepPurple,
                     width: 3.2,
                   ),
+                  color: Colors.deepPurple,
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                 ),
               ),
@@ -78,12 +82,13 @@ class MyHome extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Login With Phone",
-                    style: TextStyle(color: Colors.black, fontSize: 15),
+                    style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
                 ),
                 decoration: BoxDecoration(
+                  color: Colors.deepPurple,
                   border: Border.all(
-                    color: Colors.black,
+                    color: Colors.deepPurple,
                     width: 3.2,
                   ),
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -106,12 +111,13 @@ class MyHome extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Login With Google",
-                    style: TextStyle(color: Colors.black, fontSize: 15),
+                    style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
                 ),
                 decoration: BoxDecoration(
+                  color: Colors.deepPurple,
                   border: Border.all(
-                    color: Colors.black,
+                    color: Colors.deepPurple,
                     width: 3.2,
                   ),
                   borderRadius: BorderRadius.all(Radius.circular(5)),
