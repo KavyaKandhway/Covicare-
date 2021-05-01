@@ -15,6 +15,10 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.deepPurple[100],
+        drawer: Drawer(
+          child:Text("nmdvfdfmsdbfmsbfbsmfbsmdf"),
+
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
