@@ -1,5 +1,6 @@
 import 'package:covicare/helpers/google_auth.dart';
 import 'package:covicare/main.dart';
+import 'package:covicare/screens/aboutus.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/screens/storeform.dart';
 import 'package:covicare/screens/supplyForm.dart';
@@ -123,7 +124,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 signOutGoogle();
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => MyHome()),
+                  MaterialPageRoute(builder: (context) => AboutUs()),
                 );
               }
           ),
