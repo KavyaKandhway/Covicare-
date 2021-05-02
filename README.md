@@ -15,9 +15,9 @@ solution for all covid needs.
 
 ## Some Screenshots
 
-![Screenshot_2021-05-02-13-52-09-371_com example covicare](https://user-images.githubusercontent.com/46575071/116806936-e6ec2800-ab4d-11eb-8105-537008e67940.jpg)
+![Screenshot_2021-05-02-13-52-09-371_com example covicare](https://user-images.githubusercontent.com/46575071/116806936-e6ec2800-ab4d-11eb-8105-537008e67940.jpg) ![Screenshot_2021-05-02-13-52-25-012_com example covicare](https://user-images.githubusercontent.com/46575071/116806975-26b30f80-ab4e-11eb-9760-aeeb53877066.jpg)
 
-![Screenshot_2021-05-02-13-52-25-012_com example covicare](https://user-images.githubusercontent.com/46575071/116806975-26b30f80-ab4e-11eb-9760-aeeb53877066.jpg)
+
 
 ![Screenshot_2021-05-02-13-52-41-539_com example covicare](https://user-images.githubusercontent.com/46575071/116806978-2c105a00-ab4e-11eb-89a6-c4c93a4a06b9.jpg)
 
