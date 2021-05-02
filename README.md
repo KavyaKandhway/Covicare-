@@ -16,8 +16,11 @@ solution for all covid needs.
 ## Some Screenshots
 
 <img src="https://github.com/KavyaKandhway/Covicare-/blob/main/images/Screenshot_2021-05-02-13-52-09-371_com.example.covicare.jpg" width=25% height=25%>
+
 <img src="https://github.com/KavyaKandhway/Covicare-/blob/main/images/Screenshot_2021-05-02-13-52-25-012_com.example.covicare.jpg" width=25% height=25%>
+
 <img src="https://github.com/KavyaKandhway/Covicare-/blob/main/images/Screenshot_2021-05-02-13-52-41-539_com.example.covicare.jpg" width=25% height=25%>
+
 <img src="https://github.com/KavyaKandhway/Covicare-/blob/main/images/Screenshot_2021-05-02-13-53-13-440_com.example.covicare.jpg" width=25% height=25%>
 
 
