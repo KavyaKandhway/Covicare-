@@ -13,6 +13,8 @@ An app that could act as a platform for solving this problem, where hospitals ca
 One stop solution for the all patients to get all the neccessary medicines , oxygen and beds so that they dont go from place to place only to get rejected. Our app is an effort to provide a complete 
 solution for all covid needs.
 
+## Youtube Demo Link https://www.youtube.com/watch?v=IfXjloYdhMM&t=27s
+
 ## Some Screenshots
 
 <img src="https://github.com/KavyaKandhway/Covicare-/blob/main/images/Screenshot_2021-05-02-13-52-09-371_com.example.covicare.jpg" width=25% height=25%>
