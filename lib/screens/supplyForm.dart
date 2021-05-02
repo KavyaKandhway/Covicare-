@@ -12,26 +12,36 @@ class SupplyForm extends StatefulWidget {
   _SupplyFormState createState() => _SupplyFormState();
 }
 
+TextEditingController name = TextEditingController();
+TextEditingController phone = TextEditingController();
+TextEditingController pincode = TextEditingController();
+TextEditingController address1 = TextEditingController();
+TextEditingController address2 = TextEditingController();
+TextEditingController landmark = TextEditingController();
+TextEditingController oxygenQuantity = TextEditingController(text: '0');
+TextEditingController oxygenAmt = TextEditingController(text: '0');
+TextEditingController bedQuantity = TextEditingController(text: '0');
+TextEditingController bedAmt = TextEditingController(text: '0');
+TextEditingController remQuantity = TextEditingController(text: '0');
+TextEditingController remAmt = TextEditingController(text: '0');
+TextEditingController favQuantity = TextEditingController(text: '0');
+TextEditingController favAmt = TextEditingController(text: '0');
 final _auth = FirebaseAuth.instance;
 dynamic user;
 
 class _SupplyFormState extends State<SupplyForm> {
-  TextEditingController name = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController pincode = TextEditingController();
-  TextEditingController address1 = TextEditingController();
-  TextEditingController address2 = TextEditingController();
-  TextEditingController landmark = TextEditingController();
-  TextEditingController oxygenQuantity = TextEditingController(text: '0');
-  TextEditingController oxygenAmt = TextEditingController(text: '0');
-  TextEditingController bedQuantity = TextEditingController(text: '0');
-  TextEditingController bedAmt = TextEditingController(text: '0');
-  TextEditingController remQuantity = TextEditingController(text: '0');
-  TextEditingController remAmt = TextEditingController(text: '0');
-  TextEditingController favQuantity = TextEditingController(text: '0');
-  TextEditingController favAmt = TextEditingController(text: '0');
   String countryValue = '', stateValue = '', cityValue = '';
   bool oxygen = false, favipiravir = false, bed = false, remdesivir = false;
+  @override
+  void initState() {
+    if (user != null) {
+      setState(() {
+        user = _auth.currentUser;
+        name = TextEditingController(text: user.displayName);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
