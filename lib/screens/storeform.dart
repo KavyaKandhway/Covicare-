@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/models/store.dart';
 
+import 'home.dart';
+import 'sections.dart';
 import 'successReg.dart';
 
 class StoreForm extends StatefulWidget {
@@ -35,6 +37,18 @@ class _StoreFormState extends State<StoreForm> {
       child: Scaffold(
         backgroundColor: Colors.deepPurple[100],
         appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Section()),
+              );
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+          ),
           title: Text("Add Local Store"),
           backgroundColor: Colors.deepPurple,
         ),
@@ -71,11 +85,13 @@ class _StoreFormState extends State<StoreForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -98,11 +114,11 @@ class _StoreFormState extends State<StoreForm> {
                   height: 10.0,
                 ),
                 Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: TextField(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: TextField(
                     controller: contact,
                     keyboardType: TextInputType.number,
                     maxLength: 10,
@@ -111,11 +127,13 @@ class _StoreFormState extends State<StoreForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -197,10 +215,10 @@ class _StoreFormState extends State<StoreForm> {
                   height: 10.0,
                 ),
                 Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: TextField(
                     keyboardType: TextInputType.number,
                     maxLength: 6,
@@ -210,11 +228,13 @@ class _StoreFormState extends State<StoreForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -249,11 +269,13 @@ class _StoreFormState extends State<StoreForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -266,7 +288,7 @@ class _StoreFormState extends State<StoreForm> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:TextField(
+                  child: TextField(
                     controller: address2,
                     maxLength: 40,
                     decoration: InputDecoration(
@@ -274,11 +296,13 @@ class _StoreFormState extends State<StoreForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -305,7 +329,7 @@ class _StoreFormState extends State<StoreForm> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:TextField(
+                  child: TextField(
                     controller: landmark,
                     maxLength: 40,
                     decoration: InputDecoration(
@@ -313,11 +337,13 @@ class _StoreFormState extends State<StoreForm> {
                       counterText: "",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(color: Colors.deepPurple, width: 1.0),
+                        borderSide:
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -540,8 +566,8 @@ class _StoreFormState extends State<StoreForm> {
                       border: Border.all(width: 2, color: Colors.deepPurple),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Center(child:
-                    Text(
+                    child: Center(
+                        child: Text(
                       "Submit",
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     )),

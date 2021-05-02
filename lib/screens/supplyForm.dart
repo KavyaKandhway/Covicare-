@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/models/supply.dart';
-
+import 'package:covicare/screens/sections.dart';
 import 'successReg.dart';
 
 class SupplyForm extends StatefulWidget {
@@ -38,6 +38,18 @@ class _SupplyFormState extends State<SupplyForm> {
       child: Scaffold(
         backgroundColor: Colors.deepPurple[100],
         appBar: AppBar(
+          leading: GestureDetector(
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Section()),
+              );
+            },
+          ),
           title: Text("Sell/Donate Supplies"),
           backgroundColor: Colors.deepPurple,
         ),
@@ -75,12 +87,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -117,12 +129,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -218,12 +230,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -259,12 +271,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -286,12 +298,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -327,12 +339,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -736,12 +748,12 @@ class _SupplyFormState extends State<SupplyForm> {
                     ),
                     child: Center(
                         child: Text(
-                          "Submit",
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white),
-                        )),
+                      "Submit",
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
+                    )),
                   ),
                 ),
               ],

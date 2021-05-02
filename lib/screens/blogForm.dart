@@ -210,13 +210,13 @@ class _BlogFormState extends State<BlogForm> {
                     );
                     print("Entered");
                     Blog blog = Blog(
-                      name: name.text,
-                      designation: designation.text,
-                      title: title.text,
-                      content: content.text,
-                      anonymous: anonymous,
-                      tags: tags.text,
-                    );
+                        name: name.text,
+                        designation: designation.text,
+                        title: title.text,
+                        content: content.text,
+                        anonymous: anonymous,
+                        tags: tags.text,
+                        imageLink: 'logo.png');
                     user = _auth.currentUser;
                     print("Blog-database=================");
 

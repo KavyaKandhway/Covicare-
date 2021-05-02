@@ -73,11 +73,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHome()),
-                );
+                print("display profile");
               }),
           ListTile(
               leading: Icon(
@@ -91,7 +87,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => SupplyForm()),
@@ -109,7 +104,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => StoreForm()),
@@ -127,7 +121,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => AboutUs()),
@@ -161,10 +154,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
               ),
               onTap: () {
                 signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHome()),
-                );
               }),
         ],
       ),
