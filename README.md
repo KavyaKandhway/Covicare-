@@ -1,9 +1,6 @@
 
-# covicare
+# CoviCare
 
-A new Flutter application.
-
-## Getting Started
 The inspiration for this project came from the second wave of covid 19. There is an extreme shortage of oxygen , beds
 in hospitals and even medicines. There were no one place where people can go to check if oxygen or beds are availabe or not.
 Patients had to go from one hospital to another and from one oxygen supplier to another and even though didn't get any lead.
