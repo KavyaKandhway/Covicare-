@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/models/supply.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'successReg.dart';
 
@@ -16,6 +17,24 @@ final _auth = FirebaseAuth.instance;
 dynamic user;
 
 class _SupplyFormState extends State<SupplyForm> {
+  double latitudeData;
+  double longitudeData;
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentLocation();
+  }
+
+  getCurrentLocation() async {
+    final geoposition = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      latitudeData = geoposition.latitude;
+      longitudeData = geoposition.longitude;
+    });
+  }
+
   TextEditingController name = TextEditingController();
   TextEditingController phone = TextEditingController();
   TextEditingController pincode = TextEditingController();
@@ -75,12 +94,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -117,12 +136,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -218,12 +237,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -259,12 +278,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -286,12 +305,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -327,12 +346,12 @@ class _SupplyFormState extends State<SupplyForm> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                            BorderSide(color: Colors.deepPurple, width: 3.0),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 1.0),
+                            BorderSide(color: Colors.deepPurple, width: 1.0),
                       ),
                     ),
                   ),
@@ -720,6 +739,8 @@ class _SupplyFormState extends State<SupplyForm> {
                       fav: favipiravir,
                       favAmt: int.parse(favAmt.text),
                       favQnt: int.parse(favQuantity.text),
+                      latitude: latitudeData,
+                      longitude: longitudeData,
                     );
                     user = _auth.currentUser;
                     print("database=================");
@@ -736,12 +757,12 @@ class _SupplyFormState extends State<SupplyForm> {
                     ),
                     child: Center(
                         child: Text(
-                          "Submit",
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white),
-                        )),
+                      "Submit",
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
+                    )),
                   ),
                 ),
               ],

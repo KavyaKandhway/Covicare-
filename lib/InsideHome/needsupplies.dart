@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:covicare/InsideHome/oralmedicine/Injections.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:geolocator/geolocator.dart';
 
 class NeedSupplies extends StatefulWidget {
   @override
@@ -8,6 +9,26 @@ class NeedSupplies extends StatefulWidget {
 }
 
 class _NeedSuppliesState extends State<NeedSupplies> {
+  double userlatitudeData;
+  double userlongitudeData;
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentLocation();
+  }
+
+  getCurrentLocation() async {
+    final geoposition = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      userlatitudeData = geoposition.latitude;
+      userlongitudeData = geoposition.longitude;
+    });
+    print(userlatitudeData);
+    print(userlongitudeData);
+  }
+
   String search = "";
 
   Widget build(BuildContext context) {
