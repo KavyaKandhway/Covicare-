@@ -18,6 +18,14 @@ class LeftDrawer extends StatefulWidget {
 
 class _LeftDrawerState extends State<LeftDrawer> {
   @override
+  void initState() {
+    // TODO: implement initState
+    setState(() {
+      user = _auth.currentUser;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
@@ -44,14 +52,14 @@ class _LeftDrawerState extends State<LeftDrawer> {
                     ),
                   ),
                   Text(
-                    "title",
+                    user.displayName,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
                     ),
                   ),
                   Text(
-                    "user email id",
+                    user.email,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
