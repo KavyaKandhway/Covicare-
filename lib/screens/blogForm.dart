@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:covicare/models/blog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:covicare/helpers/database.dart';
-
+import 'dart:math';
 import 'successReg.dart';
 
 class BlogForm extends StatefulWidget {
@@ -72,7 +72,8 @@ class _BlogFormState extends State<BlogForm> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -99,7 +100,8 @@ class _BlogFormState extends State<BlogForm> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -123,7 +125,8 @@ class _BlogFormState extends State<BlogForm> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -139,7 +142,8 @@ class _BlogFormState extends State<BlogForm> {
                   minLines: 7,
                   maxLines: 10,
                   decoration: InputDecoration(
-                    icon: Icon(Icons.article_outlined, color: Colors.deepPurple),
+                    icon:
+                        Icon(Icons.article_outlined, color: Colors.deepPurple),
                     fillColor: Colors.grey[300],
                     filled: true,
                     labelText: 'Article Content',
@@ -151,7 +155,8 @@ class _BlogFormState extends State<BlogForm> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -181,7 +186,8 @@ class _BlogFormState extends State<BlogForm> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.deepPurple, width: 3.0),
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 3.0),
                     ),
                   ),
                 ),
@@ -204,22 +210,32 @@ class _BlogFormState extends State<BlogForm> {
                     );
                     print("Entered");
                     Blog blog = Blog(
-                      name: name.text,
-                      designation: designation.text,
-                      title: title.text,
-                      content: content.text,
-                      anonymous: anonymous,
-                      tags: tags.text,
-                    );
+                        name: name.text,
+                        designation: designation.text,
+                        title: title.text,
+                        content: content.text,
+                        anonymous: anonymous,
+                        tags: tags.text,
+                        imageLink: 'logo.png');
                     user = _auth.currentUser;
                     print("Blog-database=================");
-                    await DatabaseService(uid: user.uid).updateBlogData(blog);
+
+                    int len = 4;
+                    String random = "";
+                    var r = Random();
+                    const _chars =
+                        'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+                    random = List.generate(
+                            len, (index) => _chars[r.nextInt(_chars.length)])
+                        .join();
+                    String randomuid = user.uid + random;
+                    await DatabaseService(uid: randomuid).updateBlogData(blog);
                   },
                   child: new Container(
                     padding: const EdgeInsets.only(left: 150.0, top: 40.0),
                     child: new ElevatedButton(
                       child: const Text(
-                          'Submit',
+                        'Submit',
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ButtonStyle(

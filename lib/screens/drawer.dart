@@ -18,6 +18,14 @@ class LeftDrawer extends StatefulWidget {
 
 class _LeftDrawerState extends State<LeftDrawer> {
   @override
+  void initState() {
+    // TODO: implement initState
+    setState(() {
+      user = _auth.currentUser;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
@@ -44,14 +52,14 @@ class _LeftDrawerState extends State<LeftDrawer> {
                     ),
                   ),
                   Text(
-                    "title",
+                    user.displayName,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
                     ),
                   ),
                   Text(
-                    "user email id",
+                    user.email,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
@@ -73,11 +81,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHome()),
-                );
+                print("display profile");
               }),
           ListTile(
               leading: Icon(
@@ -91,7 +95,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => SupplyForm()),
@@ -109,7 +112,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => StoreForm()),
@@ -127,7 +129,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 ),
               ),
               onTap: () {
-                signOutGoogle();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => AboutUs()),
@@ -161,10 +162,6 @@ class _LeftDrawerState extends State<LeftDrawer> {
               ),
               onTap: () {
                 signOutGoogle();
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHome()),
-                );
               }),
         ],
       ),

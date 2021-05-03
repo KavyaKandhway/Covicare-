@@ -4,7 +4,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/models/supply.dart';
+
 import 'package:geolocator/geolocator.dart';
+
+
+import 'package:covicare/screens/sections.dart';
 
 import 'successReg.dart';
 
@@ -13,10 +17,25 @@ class SupplyForm extends StatefulWidget {
   _SupplyFormState createState() => _SupplyFormState();
 }
 
+TextEditingController name = TextEditingController();
+TextEditingController phone = TextEditingController();
+TextEditingController pincode = TextEditingController();
+TextEditingController address1 = TextEditingController();
+TextEditingController address2 = TextEditingController();
+TextEditingController landmark = TextEditingController();
+TextEditingController oxygenQuantity = TextEditingController(text: '0');
+TextEditingController oxygenAmt = TextEditingController(text: '0');
+TextEditingController bedQuantity = TextEditingController(text: '0');
+TextEditingController bedAmt = TextEditingController(text: '0');
+TextEditingController remQuantity = TextEditingController(text: '0');
+TextEditingController remAmt = TextEditingController(text: '0');
+TextEditingController favQuantity = TextEditingController(text: '0');
+TextEditingController favAmt = TextEditingController(text: '0');
 final _auth = FirebaseAuth.instance;
 dynamic user;
 
 class _SupplyFormState extends State<SupplyForm> {
+
   double latitudeData;
   double longitudeData;
 
@@ -49,14 +68,37 @@ class _SupplyFormState extends State<SupplyForm> {
   TextEditingController remAmt = TextEditingController(text: '0');
   TextEditingController favQuantity = TextEditingController(text: '0');
   TextEditingController favAmt = TextEditingController(text: '0');
+
   String countryValue = '', stateValue = '', cityValue = '';
   bool oxygen = false, favipiravir = false, bed = false, remdesivir = false;
+  @override
+  void initState() {
+    if (user != null) {
+      setState(() {
+        user = _auth.currentUser;
+        name = TextEditingController(text: user.displayName);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.deepPurple[100],
         appBar: AppBar(
+          leading: GestureDetector(
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Section()),
+              );
+            },
+          ),
           title: Text("Sell/Donate Supplies"),
           backgroundColor: Colors.deepPurple,
         ),
