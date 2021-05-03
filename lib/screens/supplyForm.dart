@@ -4,7 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covicare/models/supply.dart';
+
+import 'package:geolocator/geolocator.dart';
+
+
 import 'package:covicare/screens/sections.dart';
+
 import 'successReg.dart';
 
 class SupplyForm extends StatefulWidget {
@@ -30,6 +35,40 @@ final _auth = FirebaseAuth.instance;
 dynamic user;
 
 class _SupplyFormState extends State<SupplyForm> {
+
+  double latitudeData;
+  double longitudeData;
+
+  @override
+  void initState() {
+    super.initState();
+    getCurrentLocation();
+  }
+
+  getCurrentLocation() async {
+    final geoposition = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      latitudeData = geoposition.latitude;
+      longitudeData = geoposition.longitude;
+    });
+  }
+
+  TextEditingController name = TextEditingController();
+  TextEditingController phone = TextEditingController();
+  TextEditingController pincode = TextEditingController();
+  TextEditingController address1 = TextEditingController();
+  TextEditingController address2 = TextEditingController();
+  TextEditingController landmark = TextEditingController();
+  TextEditingController oxygenQuantity = TextEditingController(text: '0');
+  TextEditingController oxygenAmt = TextEditingController(text: '0');
+  TextEditingController bedQuantity = TextEditingController(text: '0');
+  TextEditingController bedAmt = TextEditingController(text: '0');
+  TextEditingController remQuantity = TextEditingController(text: '0');
+  TextEditingController remAmt = TextEditingController(text: '0');
+  TextEditingController favQuantity = TextEditingController(text: '0');
+  TextEditingController favAmt = TextEditingController(text: '0');
+
   String countryValue = '', stateValue = '', cityValue = '';
   bool oxygen = false, favipiravir = false, bed = false, remdesivir = false;
   @override
@@ -742,6 +781,8 @@ class _SupplyFormState extends State<SupplyForm> {
                       fav: favipiravir,
                       favAmt: int.parse(favAmt.text),
                       favQnt: int.parse(favQuantity.text),
+                      latitude: latitudeData,
+                      longitude: longitudeData,
                     );
                     user = _auth.currentUser;
                     print("database=================");

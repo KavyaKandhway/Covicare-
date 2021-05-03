@@ -20,6 +20,8 @@ class Supply {
   final bool fav;
   final int favQnt;
   final int favAmt;
+  final double longitude;
+  final double latitude;
   Supply(
       {this.name,
       this.phone,
@@ -41,5 +43,7 @@ class Supply {
       this.fav,
       this.favQnt,
       this.rem,
-      this.remQnt});
+      this.remQnt,
+      this.longitude,
+      this.latitude});
 }
