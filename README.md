@@ -10,7 +10,7 @@ An app that could act as a platform for solving this problem, where hospitals ca
 One stop solution for the all patients to get all the neccessary medicines , oxygen and beds so that they dont go from place to place only to get rejected. Our app is an effort to provide a complete 
 solution for all covid needs.
 
-## Youtube Demo Link https://www.youtube.com/watch?v=IfXjloYdhMM&t=27s
+## Youtube Demo Link : https://www.youtube.com/watch?v=IfXjloYdhMM&t=27s
 
 
 ## Some Screenshots
