@@ -23,10 +23,7 @@ solution for all covid needs..
 
 <img src="https://github.com/KavyaKandhway/Covicare-/blob/main/images/Screenshot_2021-05-02-13-53-13-440_com.example.covicare.jpg" width=25% height=25%>
 
-
-
 covicare op
-
 
 thank you very much
 
