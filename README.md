@@ -8,7 +8,7 @@ Also the people who had oxygen cylinders or other supplies were not able to effe
  So there was a need of a central authority that would integrate these things together.
 An app that could act as a platform for solving this problem, where hospitals can connect directly with patients and inform them about the availability of beds,oxygen suppliers.
 One stop solution for the all patients to get all the neccessary medicines , oxygen and beds so that they dont go from place to place only to get rejected. Our app is an effort to provide a complete 
-solution for all covid needs.
+solution for all covid needs..
 
 ## Youtube Demo Link: https://www.youtube.com/watch?v=IfXjloYdhMM&t=27s
   
