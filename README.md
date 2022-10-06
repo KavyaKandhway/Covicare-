@@ -1,5 +1,5 @@
 
-# CoviCare App
+## Covicare App
 
 The inspiration for this project came from the second wave of covid 19. There is an extreme shortage of oxygen , beds ,
 in hospitals and even medicines. There were no one place where people can go to check if oxygen or beds are availabe or not.
