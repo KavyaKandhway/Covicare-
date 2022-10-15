@@ -13,7 +13,7 @@ solution for all covid needs..
 ## Youtube Demo Link: https://www.youtube.com/watch?v=IfXjloYdhMM&t=27s
   
 
-## Some Screenshots
+## Some Screenshots here
 
 <img src="https://github.com/KavyaKandhway/Covicare-/blob/main/images/Screenshot_2021-05-02-13-52-09-371_com.example.covicare.jpg" width=25% height=25%>
 
