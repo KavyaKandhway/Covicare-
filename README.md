@@ -2,7 +2,7 @@
 ## Covicare App
 
 The inspiration for this project came from the second wave of covid 19. There is an extreme shortage of oxygen , beds ,
-in hospitals and even medicines. There were no one place where people can go to check if oxygen or beds are availabe or not.
+in hospitals and even medicine. There were no one place where people can go to check if oxygen or beds are availabe or not.
 Patients had to go from one hospital to another and from one oxygen supplier to another and even though didn't get any lead.
 Also the people who had oxygen cylinders or other supplies were not able to effectively sell them to the needy ones as they didn't know where to post that they have surplus supplies. As we lack a particular platform people started posting stuffs on different social media such as whatsapp, twitter, linkedin etc.
 So, there was a need of a central authority that would integrate these things together.
